@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>面向对象选项卡</title>
+	<style>
+		#Div1 input{
+			background-color: #ccc;
+		}
+		#Div1 div{
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			display: none;
+			
+		} 
+    </style>
+
+    <script>
+        window.onload=function (){
+        	var oDiv=document.getElementById('Div1');
+            var Put=oDiv.getElementsByTagName('input');
+            var aDiv=oDiv.getElementsByTagName('div');
+            var i=0;
+            for(i=0;i<Put.length;i++){
+            	Put[i].index=i;
+                Put[i].onclick=function (){
+                    for(i=0;i<Put.length;i++){
+                    	Put[i].className='';
+                        aDiv[i].style.display='none';
+                    }
+//                  this.className='put';
+                    aDiv[this.index].style.display='block';
+                };
+            }
+        };
+</script>
+
+
+	</head>
+	<body>
+		<div id="Div1">
+			<input type="button" value="one" class="put"/>
+			<input type="button" value="two"/>
+			<input type="button" value="three"/>
+			<div style="display: block;">选项卡1111</div>
+			<div>选项卡2222</div>
+			<div>选项卡3333</div>
+		</div>
+
+</div>
+	</body>
+</html>
